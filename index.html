@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Fantasy Merch</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #8b0000; /* Кроваво-красный */
+            --text-color: #d4d4d4;
+            --panel-bg: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 15px rgba(139, 0, 0, 0.7);
+        }
+
+        .settings-panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #000;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-mir {
+            background-color: #007a33; /* Цвет карт Мир */
+            color: white;
+        }
+
+        .btn-paypal {
+            background-color: #003087; /* Цвет PayPal */
+            color: white;
+        }
+
+        .btn:hover {
+            filter: brightness(1.2);
+            transform: scale(1.02);
+        }
+
+        .status-msg {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Abyssal Merch</h1>
+    <p>Настрой свой артефакт и выбери способ подношения</p>
+
+    <!-- Блок настроек -->
+    <div class="settings-panel">
+        <label>Имя на артефакте:</label>
+        <input type="text" placeholder="Введите имя..." id="userName">
+        
+        <label>Размер души (Мерча):</label>
+        <select id="size">
+            <option>S - Малый ритуал</option>
+            <option>M - Средний ритуал</option>
+            <option>L - Великий ритуал</option>
+        </select>
+        
+        <p style="font-size: 1.2em; margin-top: 20px;">К оплате: <span style="color: var(--accent-color)">$66.6 / 6660₽</span></p>
+    </div>
+
+    <!-- Кнопки оплаты -->
+    <a href="https://yoomoney.ru" target="_blank" class="btn btn-mir">Оплатить картой МИР</a>
+    <a href="https://paypal.com" target="_blank" class="btn btn-paypal">Оплатить через PayPal</a>
+
+    <div class="status-msg">
+        *Доставка осуществляется по всему миру почтой Бездны.
+    </div>
+</div>
+
+<script>
+    // Здесь можно добавить логику сохранения настроек
+    document.querySelectorAll('.btn').forEach(button => {
+        button.onclick = () => {
+            const name = document.getElementById('userName').value;
+            console.log("Заказ для: " + name);
+        };
+    });
+</script>
+
+</body>
+</html>
